@@ -7,7 +7,7 @@ const {
 const axios = require("axios");
 require("dotenv").config();
 const app = express();
-const PORT = 6000;
+const PORT = 5000;
 
 // Middleware om JSON-gegevens te ontvangen
 app.use(express.json());
@@ -50,7 +50,7 @@ app.post("/ask", async (req, res) => {
 
     // Stap 2: Genereer een antwoord
     const command = new InvokeModelCommand({
-      modelId: "amazon.titan-text-express-v1",
+      modelId: "amazon.titan-text-express-v1", // Amazon Titan Text Express V1
       contentType: "application/json",
       body: JSON.stringify({
         inputText: question,
