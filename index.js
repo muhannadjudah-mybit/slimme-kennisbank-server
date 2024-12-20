@@ -7,7 +7,7 @@ const {
 const axios = require("axios");
 require("dotenv").config();
 const app = express();
-const PORT = 5000;
+const PORT = 6000;
 
 // Middleware om JSON-gegevens te ontvangen
 app.use(express.json());
@@ -94,7 +94,7 @@ app.post("/generate", async (req, res) => {
     );
 
     // Stuur het resultaat naar de frontend
-    res.json({ generated_text: response.data[0].generated_text });
+    res.json({ answer: response.data[0].generated_text });
   } catch (error) {
     console.error("Error:", error);
     res.status(500).send("Er ging iets mis bij het genereren van tekst");
